@@ -1,6 +1,6 @@
-# 💻 DimDim - Suporte Técnico
+#  DimDim - Suporte Técnico
 
-## 📌 1. Descrição do Projeto
+##  1. Descrição do Projeto
 O **DimDim - Suporte Técnico** é uma solução de gerenciamento de chamados desenvolvida para modernizar os processos tecnológicos da empresa **DimDim**.
 
 A aplicação utiliza:
@@ -19,27 +19,27 @@ Este projeto representa a transição de um modelo tradicional e manual para uma
 
 ---
 
-# 🏗️ 2. Arquitetura do Sistema
+#  2. Arquitetura do Sistema
 
 A solução foi projetada para garantir **escalabilidade, segurança e padronização de ambientes**.
 
-### 🔹 App (Flask)
+###  App (Flask)
 - Responsável pela **interface web e lógica de negócio**
 - Executado com **usuário sem privilégios administrativos**, aumentando a segurança da aplicação.
 
-### 🔹 Database (MySQL 8.0)
+###  Database (MySQL 8.0)
 - Camada responsável pela **persistência dos dados**
 - Utiliza a **imagem oficial do MySQL** para garantir confiabilidade e estabilidade.
 
-### 🔹 Rede
+###  Rede
 - Comunicação interna entre containers através de uma **rede bridge isolada**.
 
-### 🔹 Persistência
+###  Persistência
 - Uso de **volumes Docker**, garantindo que os dados dos chamados **não sejam perdidos** ao reiniciar os containers.
 
 ---
 
-# ⚙️ 3. Pré-requisitos
+#  3. Pré-requisitos
 
 Antes de executar o projeto, certifique-se de que possui:
 
@@ -48,23 +48,23 @@ Antes de executar o projeto, certifique-se de que possui:
 
 ---
 
-# 🐳 4. Comandos Essenciais (Docker Compose)
+#  4. Comandos Essenciais (Docker Compose)
 
 Execute os comandos abaixo **na pasta raiz do projeto**.
 
-### ▶️ Subir a aplicação (Build + Run)
+### Subir a aplicação (Build + Run)
 
 ```bash
 docker-compose up --build
 ```
 
-### ⛔ Parar e remover os serviços
+###  Parar e remover os serviços
 
 ```bash
 docker-compose down
 ```
 
-### 🧹 Limpar volumes e dados (Reset completo)
+###  Limpar volumes e dados (Reset completo)
 
 ```bash
 docker-compose down -v
@@ -72,7 +72,7 @@ docker-compose down -v
 
 ---
 
-# 🚀 5. Processo de Deploy Passo a Passo
+#  5. Processo de Deploy Passo a Passo
 
 1. Verifique se as portas **5000** e **3306** estão disponíveis na sua máquina.
 
@@ -92,7 +92,7 @@ http://localhost:5000
 
 ---
 
-# 👥 Integrantes
+#  Integrantes
 
 - **Gabriel Wu Castro** — RM: 560210  
 - **Fábio Henrique de Souza Eduardo** — RM: 560416  
