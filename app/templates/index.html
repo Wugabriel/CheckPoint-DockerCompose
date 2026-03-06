@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DimDim - Suporte Técnico</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; max-width: 800px; margin: 40px auto; padding: 20px; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .form-group { margin-bottom: 15px; }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { background-color: #3498db; color: white; padding: 12px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; }
+        button:hover { background-color: #2980b9; }
+        .chamado-card { border-left: 5px solid #3498db; background: #fff; margin-top: 20px; padding: 15px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: relative; }
+        .btn-delete { color: #e74c3c; text-decoration: none; font-size: 0.85em; font-weight: bold; position: absolute; top: 15px; right: 15px; }
+        .btn-delete:hover { text-decoration: underline; }
+        .meta { font-size: 0.8em; color: #7f8c8d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de chamados</h1>
+        
+        <form action="/registrar" method="POST">
+            <div class="form-group">
+                <input type="text" name="titulo" placeholder="Título do Chamado" required>
+            </div>
+            <div class="form-group">
+                <textarea name="descricao" rows="3" placeholder="Descreva o problema técnico..." required></textarea>
+            </div>
+            <button type="submit">Registrar Novo Chamado</button>
+        </form>
+
+        <hr style="margin: 30px 0;">
+
+        <h2>Chamados Ativos</h2>
+        {% if chamados %}
+            {% for chamado in chamados %}
+                <div class="chamado-card">
+                    <a href="/deletar/{{ chamado.id }}" class="btn-delete" onclick="return confirm('Deseja excluir este chamado?')">Excluir</a>
+                    <strong>#{{ chamado.id }} - {{ chamado.titulo }}</strong>
+                    <p>{{ chamado.descricao }}</p>
+                    <div class="meta">Aberto em: {{ chamado.data_criacao }}</div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align: center; color: #95a5a6;">Nenhum chamado pendente.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
