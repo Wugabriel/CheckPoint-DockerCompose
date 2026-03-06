@@ -1,70 +1,70 @@
-# DimDim - Suporte Técnico
+# 💻 DimDim - Suporte Técnico
 
-## Descrição do Projeto
-O DimDim - Suporte Técnico é uma solução de gerenciamento de chamados desenvolvida para modernizar os processos tecnológicos da empresa DimDim.
+## 📌 1. Descrição do Projeto
+O **DimDim - Suporte Técnico** é uma solução de gerenciamento de chamados desenvolvida para modernizar os processos tecnológicos da empresa **DimDim**.
 
 A aplicação utiliza:
 
-- Flask (Python) no backend
-- MySQL para persistência de dados
+- **Flask (Python)** no backend  
+- **MySQL** para persistência de dados  
 
-O sistema permite operações completas de CRUD:
+O sistema permite operações completas de **CRUD**:
 
 - Create
 - Read
 - Update
 - Delete
 
-Este projeto representa a transição de um modelo tradicional e manual para uma infraestrutura moderna baseada em containers, utilizando Docker e Docker Compose.
+Este projeto representa a transição de um modelo tradicional e manual para uma **infraestrutura moderna baseada em containers**, utilizando **Docker** e **Docker Compose**.
 
 ---
 
-# Arquitetura do Sistema
+# 🏗️ 2. Arquitetura do Sistema
 
-A solução foi projetada para garantir escalabilidade, segurança e padronização de ambientes.
+A solução foi projetada para garantir **escalabilidade, segurança e padronização de ambientes**.
 
-## App (Flask)
-- Responsável pela interface web e lógica de negócio
-- Executado com usuário sem privilégios administrativos, aumentando a segurança da aplicação
+### 🔹 App (Flask)
+- Responsável pela **interface web e lógica de negócio**
+- Executado com **usuário sem privilégios administrativos**, aumentando a segurança da aplicação.
 
-## Database (MySQL 8.0)
-- Camada responsável pela persistência dos dados
-- Utiliza a imagem oficial do MySQL para garantir confiabilidade e estabilidade
+### 🔹 Database (MySQL 8.0)
+- Camada responsável pela **persistência dos dados**
+- Utiliza a **imagem oficial do MySQL** para garantir confiabilidade e estabilidade.
 
-## Rede
-- Comunicação interna entre containers através de uma rede bridge isolada
+### 🔹 Rede
+- Comunicação interna entre containers através de uma **rede bridge isolada**.
 
-## Persistência
-- Uso de volumes Docker, garantindo que os dados dos chamados não sejam perdidos ao reiniciar os containers
+### 🔹 Persistência
+- Uso de **volumes Docker**, garantindo que os dados dos chamados **não sejam perdidos** ao reiniciar os containers.
 
 ---
 
-# Pré-requisitos
+# ⚙️ 3. Pré-requisitos
 
 Antes de executar o projeto, certifique-se de que possui:
 
-- Docker Desktop instalado
-- Docker Compose habilitado no terminal
+- **Docker Desktop** instalado  
+- **Docker Compose** habilitado no terminal
 
 ---
 
-# Comandos Essenciais (Docker Compose)
+# 🐳 4. Comandos Essenciais (Docker Compose)
 
-Execute os comandos abaixo na pasta raiz do projeto.
+Execute os comandos abaixo **na pasta raiz do projeto**.
 
-## Subir a aplicação (Build e Run)
+### ▶️ Subir a aplicação (Build + Run)
 
 ```bash
 docker-compose up --build
 ```
 
-## Parar e remover os serviços
+### ⛔ Parar e remover os serviços
 
 ```bash
 docker-compose down
 ```
 
-## Limpar volumes e dados (Reset completo)
+### 🧹 Limpar volumes e dados (Reset completo)
 
 ```bash
 docker-compose down -v
@@ -72,9 +72,9 @@ docker-compose down -v
 
 ---
 
-# Processo de Deploy Passo a Passo
+# 🚀 5. Processo de Deploy Passo a Passo
 
-1. Verifique se as portas 5000 e 3306 estão disponíveis em sua máquina.
+1. Verifique se as portas **5000** e **3306** estão disponíveis na sua máquina.
 
 2. No terminal, execute:
 
@@ -82,7 +82,7 @@ docker-compose down -v
 docker-compose up --build
 ```
 
-3. O sistema aguardará o banco de dados estar saudável antes de iniciar o App.
+3. O sistema aguardará o **banco de dados estar saudável** antes de iniciar a aplicação.
 
 4. Após iniciar, acesse no navegador:
 
@@ -92,8 +92,8 @@ http://localhost:5000
 
 ---
 
-# Integrantes
+# 👥 Integrantes
 
-- Gabriel Wu Castro — RM: 560210
-- Fábio Henrique de Souza Eduardo — RM: 560416
-- Renato Kenji Sugaki — RM: 559810
+- **Gabriel Wu Castro** — RM: 560210  
+- **Fábio Henrique de Souza Eduardo** — RM: 560416  
+- **Renato Kenji Sugaki** — RM: 559810
