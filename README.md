@@ -92,6 +92,13 @@ http://localhost:5000
 
 ---
 
+## Vídeo de demonstração 
+
+[![Vídeo de Demonstração](https://img.youtube.com/vi/q8lHSPC4u5E/maxresdefault.jpg)](https://youtu.be/q8lHSPC4u5E)
+
+## Vídeo do crud
+
+[![Vídeo de Demonstração](https://img.youtube.com/vi/jqAHGYpESac/maxresdefault.jpg)](https://youtu.be/jqAHGYpESac)
 #  Integrantes
 
 - **Gabriel Wu Castro** — RM: 560210  
