@@ -102,7 +102,72 @@ docker-compose up --build
 ```
 http://localhost:5000
 ```
+---
 
+#  Arquitetura Antes e Depois da Containerização
+
+## Arquitetura Atual (Modelo Tradicional)
+
+Atualmente a aplicação roda diretamente no servidor utilizando **Python (Flask)**.  
+A aplicação se conecta a um banco de dados **MySQL** instalado localmente ou em um servidor dedicado.
+
+Esse modelo apresenta algumas limitações como:
+
+- Dificuldade de escalabilidade
+- Diferenças entre ambientes de desenvolvimento e produção
+- Maior complexidade de configuração manual
+
+### Estrutura da Arquitetura
+        +---------+
+        | Usuário |
+        +----+----+
+             |
+             v
+    +--------------------+
+    | Aplicação Python   |
+    | (Flask - app.py)   |
+    | Rodando no servidor|
+    +---------+----------+
+              |
+              v
+       +--------------+
+       | Banco MySQL  |
+       | dimdim_db    |
+       +--------------+
+
+
+---
+
+## Arquitetura Após Modernização com Docker
+
+Após a modernização, a aplicação e o banco de dados passam a ser executados em **containers separados**, utilizando **Docker Compose**.
+
+Essa abordagem traz diversas vantagens:
+
+- Ambientes padronizados
+- Facilidade de deploy
+- Isolamento entre serviços
+- Escalabilidade
+- Persistência de dados com volumes
+
+### Estrutura da Arquitetura
+            +---------+
+            | Usuário |
+            +----+----+
+                 |
+                 v
+        +----------------------+
+        | Container APP        |
+        | Python / Flask       |
+        | Porta 5000           |
+        +----------+-----------+
+                   |
+                   v
+        +----------------------+
+        | Container DB         |
+        | MySQL 8.0            |
+        | Volume Persistente   |
+        +----------------------+
 ---
 
 ## Vídeo de demonstração 
