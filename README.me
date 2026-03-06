@@ -1,0 +1,52 @@
+# DimDim - Suporte Técnico (Modernização via Docker)
+
+## 1. Descrição do Projeto
+[cite_start]O **DimDim - Suporte Técnico** é uma solução de gerenciamento de chamados desenvolvida para modernizar os processos tecnológicos da empresa DimDim[cite: 31, 32]. [cite_start]A aplicação utiliza **Flask (Python)** no backend e **MySQL** para persistência de dados, permitindo operações completas de CRUD (Create, Read, Update, Delete)[cite: 46, 73].
+
+[cite_start]Este projeto marca a transição de uma arquitetura tradicional e manual para uma infraestrutura containerizada e orquestrada via **Docker Compose**[cite: 32, 38].
+
+## 2. Arquitetura do Sistema
+[cite_start]A solução foi desenhada para garantir escalabilidade e ambientes padronizados[cite: 39, 40]:
+
+* [cite_start]**App (Flask):** Interface web e lógica de negócio executada com usuário sem privilégios administrativos para maior segurança[cite: 57].
+* [cite_start]**Database (MySQL 8.0):** Camada de dados utilizando imagem oficial para garantir confiabilidade[cite: 62].
+* [cite_start]**Rede:** Comunicação interna isolada via rede bridge[cite: 53].
+* [cite_start]**Persistência:** Uso de volumes Docker para assegurar que os dados dos chamados não sejam perdidos ao reiniciar os containers[cite: 53].
+
+
+
+## 3. Pré-requisitos
+* Docker Desktop instalado.
+* Docker Compose ativo no terminal.
+
+## [cite_start]4. Comandos Essenciais (Docker Compose) 
+Execute os comandos abaixo na pasta raiz do projeto:
+
+* **Subir a aplicação (Build e Run):**
+    ```bash
+    docker-compose up --build
+    ```
+* **Parar e remover os serviços:**
+    ```bash
+    docker-compose down
+    ```
+* **Limpar volumes e dados (Reset completo):**
+    ```bash
+    docker-compose down -v
+    ```
+
+## [cite_start]5. Processo de Deploy Passo a Passo 
+1.  [cite_start]Verifique se as portas `5000` e `3306` estão disponíveis em sua máquina[cite: 55].
+2.  No terminal, execute o comando `docker-compose up --build`.
+3.  [cite_start]O sistema aguardará o banco de dados estar saudável (*health check*) antes de iniciar o App[cite: 56].
+4.  Acesse a interface em seu navegador no endereço: `http://localhost:5000`.
+
+## [cite_start]6. Troubleshooting Básico 
+* **Erro de Conexão:** Caso o App não conecte ao banco imediatamente, o sistema possui um mecanismo de retentativa automática até que o MySQL esteja pronto.
+* **Containers travados:** Utilize `docker ps` para verificar se há instâncias antigas rodando e `docker-compose stop` para encerrá-las.
+* **Reset de Banco:** Se houver inconsistência nos dados, execute `docker-compose down -v` para recriar o banco a partir do script `init.sql`.
+
+---
+[cite_start]**Desenvolvido por:** Gabriel Wu Castro (RM: 560210) 
+[cite_start]**Disciplina:** DevOps Tools & Cloud Computing [cite: 4]
+[cite_start]**Instituição:** FIAP [cite: 2]
