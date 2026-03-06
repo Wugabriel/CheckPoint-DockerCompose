@@ -1,52 +1,99 @@
-# DimDim - Suporte Técnico (Modernização via Docker)
+# DimDim - Suporte Técnico
 
-## 1. Descrição do Projeto
-[cite_start]O **DimDim - Suporte Técnico** é uma solução de gerenciamento de chamados desenvolvida para modernizar os processos tecnológicos da empresa DimDim[cite: 31, 32]. [cite_start]A aplicação utiliza **Flask (Python)** no backend e **MySQL** para persistência de dados, permitindo operações completas de CRUD (Create, Read, Update, Delete)[cite: 46, 73].
+## Descrição do Projeto
+O **DimDim - Suporte Técnico** é uma solução de gerenciamento de chamados desenvolvida para modernizar os processos tecnológicos da empresa **DimDim**.
 
-[cite_start]Este projeto marca a transição de uma arquitetura tradicional e manual para uma infraestrutura containerizada e orquestrada via **Docker Compose**[cite: 32, 38].
+A aplicação utiliza:
 
-## 2. Arquitetura do Sistema
-[cite_start]A solução foi desenhada para garantir escalabilidade e ambientes padronizados[cite: 39, 40]:
+- **Flask (Python)** no backend  
+- **MySQL** para persistência de dados  
 
-* [cite_start]**App (Flask):** Interface web e lógica de negócio executada com usuário sem privilégios administrativos para maior segurança[cite: 57].
-* [cite_start]**Database (MySQL 8.0):** Camada de dados utilizando imagem oficial para garantir confiabilidade[cite: 62].
-* [cite_start]**Rede:** Comunicação interna isolada via rede bridge[cite: 53].
-* [cite_start]**Persistência:** Uso de volumes Docker para assegurar que os dados dos chamados não sejam perdidos ao reiniciar os containers[cite: 53].
+O sistema permite operações completas de **CRUD**:
 
+- Create
+- Read
+- Update
+- Delete
 
-
-## 3. Pré-requisitos
-* Docker Desktop instalado.
-* Docker Compose ativo no terminal.
-
-## [cite_start]4. Comandos Essenciais (Docker Compose) 
-Execute os comandos abaixo na pasta raiz do projeto:
-
-* **Subir a aplicação (Build e Run):**
-    ```bash
-    docker-compose up --build
-    ```
-* **Parar e remover os serviços:**
-    ```bash
-    docker-compose down
-    ```
-* **Limpar volumes e dados (Reset completo):**
-    ```bash
-    docker-compose down -v
-    ```
-
-## [cite_start]5. Processo de Deploy Passo a Passo 
-1.  [cite_start]Verifique se as portas `5000` e `3306` estão disponíveis em sua máquina[cite: 55].
-2.  No terminal, execute o comando `docker-compose up --build`.
-3.  [cite_start]O sistema aguardará o banco de dados estar saudável (*health check*) antes de iniciar o App[cite: 56].
-4.  Acesse a interface em seu navegador no endereço: `http://localhost:5000`.
-
-## [cite_start]6. Troubleshooting Básico 
-* **Erro de Conexão:** Caso o App não conecte ao banco imediatamente, o sistema possui um mecanismo de retentativa automática até que o MySQL esteja pronto.
-* **Containers travados:** Utilize `docker ps` para verificar se há instâncias antigas rodando e `docker-compose stop` para encerrá-las.
-* **Reset de Banco:** Se houver inconsistência nos dados, execute `docker-compose down -v` para recriar o banco a partir do script `init.sql`.
+Este projeto representa a transição de um modelo tradicional e manual para uma **infraestrutura moderna baseada em containers**, utilizando **Docker** e **Docker Compose**.
 
 ---
-[cite_start]**Desenvolvido por:** Gabriel Wu Castro (RM: 560210) 
-[cite_start]**Disciplina:** DevOps Tools & Cloud Computing [cite: 4]
-[cite_start]**Instituição:** FIAP [cite: 2]
+
+# Arquitetura do Sistema
+
+A solução foi projetada para garantir **escalabilidade, segurança e padronização de ambientes**.
+
+### App (Flask)
+- Responsável pela **interface web e lógica de negócio**
+- Executado com **usuário sem privilégios administrativos**, aumentando a segurança da aplicação.
+
+### Database (MySQL 8.0)
+- Camada responsável pela **persistência dos dados**
+- Utiliza a **imagem oficial do MySQL** para garantir confiabilidade e estabilidade.
+
+### Rede
+- Comunicação interna entre containers através de uma **rede bridge isolada**.
+
+### Persistência
+- Uso de **volumes Docker**, garantindo que os dados dos chamados **não sejam perdidos** ao reiniciar os containers.
+
+---
+
+# Pré-requisitos
+
+Antes de executar o projeto, certifique-se de que possui:
+
+- **Docker Desktop** instalado  
+- **Docker Compose** habilitado no terminal
+
+---
+
+# Comandos Essenciais (Docker Compose)
+
+Execute os comandos abaixo **na pasta raiz do projeto**.
+
+### Subir a aplicação (Build + Run)
+
+```bash
+docker-compose up --build
+```
+
+### Parar e remover os serviços
+
+```bash
+docker-compose down
+```
+
+### Limpar volumes e dados (Reset completo)
+
+```bash
+docker-compose down -v
+```
+
+---
+
+# Processo de Deploy Passo a Passo
+
+1. Verifique se as portas **5000** e **3306** estão disponíveis na sua máquina.
+
+2. No terminal, execute:
+
+```bash
+docker-compose up --build
+```
+
+O sistema aguardará o **banco de dados estar saudável** antes de iniciar a aplicação.
+
+Após iniciar, acesse no navegador:
+
+```
+http://localhost:5000
+```
+
+---
+
+# Integrantes
+
+- **Gabriel Wu Castro** — RM: 560210  
+- **Fábio Henrique de Souza Eduardo** — RM: 560416  
+- **Renato Kenji Sugaki** — RM: 559810
