@@ -72,7 +72,20 @@ docker-compose down -v
 
 ---
 
-#  5. Processo de Deploy Passo a Passo
+# 5. Como obter o projeto
+
+Clone o repositório do GitHub utilizando o comando abaixo:
+
+```bash
+git clone https://github.com/Wugabriel/CheckPoint-DockerCompose.git
+```
+
+Depois acesse a pasta do projeto
+```bash
+cd CheckPoint-DockerCompose
+```
+
+#  6. Processo de Deploy Passo a Passo
 
 1. Verifique se as portas **5000** e **3306** estão disponíveis na sua máquina.
 
